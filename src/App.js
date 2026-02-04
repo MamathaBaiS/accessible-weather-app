@@ -6,8 +6,12 @@ function App() {
   const [city, setCity] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=a4a42be206fcd9806374982691099d6b`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
+
+console.log("API KEY:", process.env.REACT_APP_WEATHER_API_KEY);
 
   const getWeatherTheme = (condition) => {
     if (!condition) return "theme-night";
@@ -36,6 +40,7 @@ function App() {
         setError("");
         const response = await axios.get(url);
         setWeatherData(response.data);
+        console.log(response.data)
       } catch {
         setError("City not found 🌍");
         setWeatherData(null);
