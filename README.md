@@ -63,6 +63,9 @@ Accessibility was treated as a **core requirement**, not an afterthought.
 
 ## 📸 Screenshots
 
+### Default Weather Theme
+![Default theme](screenshots/default.png)
+
 ### Sunny Weather Theme
 ![Sunny theme](screenshots/sunny.png)
 
