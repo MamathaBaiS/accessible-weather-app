@@ -11,8 +11,6 @@ const API_KEY = process.env.REACT_APP_WEATHER_API_KEY
 
 const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
 
-console.log("API KEY:", process.env.REACT_APP_WEATHER_API_KEY);
-
   const getWeatherTheme = (condition) => {
     if (!condition) return "theme-night";
 
@@ -40,7 +38,6 @@ console.log("API KEY:", process.env.REACT_APP_WEATHER_API_KEY);
         setError("");
         const response = await axios.get(url);
         setWeatherData(response.data);
-        console.log(response.data)
       } catch {
         setError("City not found 🌍");
         setWeatherData(null);
